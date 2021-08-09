@@ -6,7 +6,6 @@ def drill(request):
     if(request.method=='POST'):
         entryId = Clue.objects.filter(clue_text=request.POST['answer']).select_related()
         return render(request, 'xword_data/xword-answer.html', {'data':entryId})
-    # find_list = Entry.objects.order_by("?").first()
     else :
         find_list = Clue.objects.order_by("?").first()
         context = {'data': find_list}
