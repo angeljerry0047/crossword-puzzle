@@ -1,0 +1,20 @@
+{% extends 'base.html' %} {% block content %}
+<body lang="EN-US" link="blue" vlink="purple">
+  <div style="width: 100%; height: 100vh">
+    <h1>
+      Q: {{data.clue_text}}?
+    </h1>
+    <form method="POST" novalidate>
+      {% csrf_token%}
+      <label style="font-size: 35px" for="answer">Answer:</label>
+      <input
+        style="font-size: 35px"
+        type="text"
+        id="answer"
+        name="answer"
+      /><br /><br />
+      <input style="font-size: 30px" type="submit" value="Submit" />
+    </form>
+  </div>
+</body>
+{% endblock %}

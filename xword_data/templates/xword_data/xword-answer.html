@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    td,
+    th {
+      border: 1px solid #ddddd9;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+
+    tr:nth-child(1) {
+      background-color:darkgreen;
+    }
+  </style>
+<body lang=EN-US link=blue vlink=purple>
+    {% if data|length > 0 %}
+    <table>
+        <tr>
+            <th>No</th>
+            <th>Entry</th>
+          </tr>
+          {% for data_item in data %}
+            <tr>
+            <td>{{ data|length }}</td>
+            <td>{{ data_item}}</td>
+        </tr>
+          {% endfor %}
+    </table>
+    {% else %}
+    <h5>
+        No results
+    </h5>
+    {% endif %}
+</body>
+{% endblock %}
